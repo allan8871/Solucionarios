@@ -1,1 +1,83 @@
 \chapter{Axioma da Escolha e suas Aplicações}
+
+\setcounter{ex}{0}
+
+\begin{exercicio}
+	content
+\end{exercicio}
+\begin{solucao}
+	content
+\end{solucao}
+
+\begin{exercicio}
+	Discuta a seguinte afirmação: \textit{sempre que a existência de uma função escolha sobre um conjunto vale em ZFC mas não é assegurada em ZF, temos, em ZFC, mais de uma função escolha sobre esse conjunto}.
+\end{exercicio}
+\begin{solucao}
+	O AC diz que se $x$ é um conjunto com $\emptyset\notin x$, então existe uma função $f$ de domínio $x$ tal que para cada $y\in x$, $f(y)\in y$. Se existe um $y\in x$ com dois ou mais elementos, digamos $a,b\in y$, podemos ter duas funções escolhas: uma com $f(y)=a$ e outra com $g(y)=b$. Então, a menos que todos os elementos de $x$ sejam conjuntos unitários (neste caso $f(\{y\})=y$ e o AC se torna desnecessário), pode-se ter mais de uma função escolha sobre $x$.
+\end{solucao}
+
+\begin{exercicio}
+	content
+\end{exercicio}
+\begin{solucao}
+	content
+\end{solucao}
+
+\begin{exercicio}
+	Na demonstração do princípio da boa ordem, por que assumimos a condição 3 da ordem $\preceq$? A afirmação contida na demonstração seria verdadeira ou falsa, se tirássemos essa condição? Justifique.
+\end{exercicio}
+\begin{solucao}
+	O único momento da prova em que a condição 3 é usada é para mostrar que $z\leq_2 w$. Sem ela, só podemos concluir que $w\leq_2 z$. Precisamos da desigualdade $z\leq_2 w$ para concluir que $w=z$ e gerar a contradição desejada.
+\end{solucao}
+
+\begin{exercicio}
+	content
+\end{exercicio}
+\begin{solucao}
+	content
+\end{solucao}
+
+\begin{exercicio}
+	Porve, em ZF, que $\omega\times 2$ e $\omega\times\omega$ podem ser bem ordenados.
+\end{exercicio}
+\begin{solucao}
+	Sabemos que $(\omega,\subset)$ é bem ordenado. Defina a relação $\leq$ em $\omega\times 2$ por
+	$$(a,b)\leq(c,d)\leftrightarrow((a\subset c\wedge b=d)\vee(b=0\wedge d=1)).$$
+	Seja $S\subset\omega\times 2$ não-vazio. Então $S=S_0\cup S_1$, onde $S_0=S\cap(\omega\times\{0\})$ e $S_1=S\cap(\omega\times \{1\})$. Como $S\neq\emptyset$, pelo menos um dos conjuntos $S_0$ ou $S_1$ é não-vazio. Suponha que ambos são não-vazios. Como $(\omega,\subset)$ é bem ordenado, $S_0$ tem um elemento mínimo $m_0$, assim como $S_1$ tem um elemento mínimo $m_1$. Como $(m_0,0)\leq(m_1,1)$, temos que $(m_0,0)=\min S$. Se $S_0=\emptyset$, $(m_1,1)=\min S$; se $S_1=\emptyset$, $(m_0,0)=\min S$. Em qualquer caso $S$ tem um elemento mínimo e, portanto, $(\omega\times 2,\leq)$ é bem ordenado.
+	
+	Para $\omega\times\omega$ definimos $\leq$ por
+	$$(a,b)\leq(c,d)\leftrightarrow((a\subset c\wedge b=d)\vee(b\subset d\wedge b\neq d)).$$
+	Seja $S\subset\omega\times\omega$ um conjunto não-vazio. Então $S=\bigcup_{n\in\omega}S_n$, onde $S_n=S\cap(\omega\times \{n\})$. Para cada $S_n\neq\emptyset$ ponha $m_n=\min S_n$ (que existe pois $(\omega,\subset)$ é bem ordenado). Seja $n_0=\min\{n\in\omega:S_n\neq\emptyset\}$. Então $(m_{n_0},n_0)=\min S$. Portanto $(\omega\times\omega,\leq)$ é bem ordenado.
+	
+	\noindent\textbf{Observação:} No capítulo 6 do livro do Fajardo está demonstrado que existe uma bijeção entre $\omega\times\omega$ e $\omega$. Para cada bijeção $f:\omega\to\omega\times\omega$, a relação $\leq$ dada por $(a,b)\leq(c,d)\leftrightarrow f^{-1}(a,b)\subset f^{-1}(c,d)$ é uma boa ordem em $\omega\times\omega$.
+\end{solucao}
+
+\begin{exercicio}
+	content
+\end{exercicio}
+\begin{solucao}
+	content
+\end{solucao}
+
+\begin{exercicio}
+	Seja $F:A\to B$ uma função e suponha $\emptyset\notin B$. Porve que existe uma função $f:A\to\bigcup B$ tal que $f(a)\in F(a)$, para todo $a\in A$.
+\end{exercicio}
+\begin{solucao}
+	Basta tomar $f=g\circ F:A\to\bigcup B$, em que $g:B\to\bigcup B$ é uma função escolha.
+\end{solucao}
+
+\begin{exercicio}
+	content
+\end{exercicio}
+\begin{solucao}
+	content
+\end{solucao}
+
+\begin{exercicio}
+	Considerando o sistema ZFC sem o axioma da regularidade, prove que esse é equivalente à seguinte sentença: não existe uma função $f$ de domínio $\omega$ tal que $f(n^+)\in f(n)$, para todo $n\in\omega$.
+\end{exercicio}
+\begin{solucao}
+	$(\Rightarrow)$ Já feito no Exercício 11, capítulo 4.
+	
+	$(\Leftarrow)$ Assuma que não existe função $f$ de domínio $\omega$ tal que $f(n^+)\in f(n)$, para todo $n\in\omega$. Suponha, por absurdo, que o axioma da regularidade seja falso. Então existe um conjunto $x\neq\emptyset$ tal que para todo $y\in x$, $y\cap x\neq\emptyset$. Pelo axioma da escolha, existe uma função $g$ de domínio $x$ tal que $g(y)\in y\cap x$ (note que $\im(g)\subset x$, então podemos considerar $g$ como uma função de $x$ em $x$). Fixe um $z\in x$. Pelo teorema da recursão finita, existe uma única função $f:\omega\to x$ tal que $f(0)=z$ e $f(n^+)=g(f(n))$, para cada $n\in\omega$. Então $f(n^+)\in f(n)$, o que contradiz a hipótese. Portanto o axioma da regularidade é verdadeiro.
+\end{solucao}
